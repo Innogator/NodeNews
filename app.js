@@ -1,4 +1,4 @@
-angular.module('flapperNews', ['ui.router'])
+angular.module('nodeNews', ['ui.router'])
 .config([
 '$stateProvider',
 '$urlRouterProvider',
@@ -21,7 +21,11 @@ function($stateProvider, $urlRouterProvider) {
 
 .factory('posts', [function() {
 	var o = {
-		posts: []
+		posts: [
+			{ title: 'post 1', link: '', upvotes: 10 },
+			{ title: 'post 2', link: '', upvotes: 20 },
+			{ title: 'post 3', link: '', upvotes: 30 }
+		]
 	};
 	return o;
 }])
@@ -29,11 +33,11 @@ function($stateProvider, $urlRouterProvider) {
 .controller('MainCtrl', [
 	'$scope',
 	'posts',
-	'ui.router',
 	function($scope, posts){
 		$scope.posts = posts.posts;
 		
 		$scope.addPost = function() {
+			alert('help');
 			if(!$scope.title || $scope.title === '') { return; }
 			$scope.posts.push({ 
 				title: $scope.title,
@@ -55,7 +59,7 @@ function($stateProvider, $urlRouterProvider) {
 
 .controller('PostsCtrl', [
 	'$scope',
-	'$stateParams'
+	'$stateParams',
 	'posts',
 	function($scope, $stateParams, posts) {
 		
