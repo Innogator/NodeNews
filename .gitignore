@@ -1,6 +1,7 @@
-*~backup-*
-.c9revisions
-.c9
+.settings.xml
+.c9revisions/
+.c9/
+.settings
 .git
 .svn
 .DS_Store
