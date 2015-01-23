@@ -1,0 +1,9 @@
+{
+  "name": "nodeNews",
+  "version": "0.0.1",
+  "description": "A reddit type clone with comments, upvotes, and users",
+  "main": "server.js",
+  "repository": "",
+  "author": "Bryan Tanner",
+  "dependencies": {}
+}
