@@ -37,7 +37,6 @@ function($stateProvider, $urlRouterProvider) {
 		$scope.posts = posts.posts;
 		
 		$scope.addPost = function() {
-			alert('help');
 			if(!$scope.title || $scope.title === '') { return; }
 			$scope.posts.push({ 
 				title: $scope.title,
@@ -64,13 +63,6 @@ function($stateProvider, $urlRouterProvider) {
 	function($scope, $stateParams, posts) {
 		
 		$scope.post = posts.posts[$stateParams.id];
-	
-		$scope.posts.push({
-			title: $scope.title,
-			link: $scope.link,
-			upvotes: 0,
-
-		});		
 		
 		$scope.addComment = function() {
 			if ($scope.body === '') { return; }
