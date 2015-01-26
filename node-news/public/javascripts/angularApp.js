@@ -24,7 +24,7 @@ function($stateProvider, $urlRouterProvider) {
 					return posts.get($stateParams.id);
 				}]
 			}
-		});
+		})
 
 	$urlRouterProvider.otherwise('home');
 }])
