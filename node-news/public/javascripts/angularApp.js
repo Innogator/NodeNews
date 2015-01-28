@@ -53,6 +53,13 @@ function($stateProvider, $urlRouterProvider) {
 		});
 	};
 	
+	o.downvote = function(post) {
+		return $http.put('/posts/' + post._id + '/downvote')
+		.success(function(data) {
+			post.downvotes += 1;
+		});
+	};
+	
 	o.get = function(id) {
 		return $http.get('/posts/' + id).then(function(res){
 			return res.data;
@@ -128,7 +135,7 @@ function($stateProvider, $urlRouterProvider) {
 			posts.upvoteComment(post, comment);
 		};
 		
-		$scope.inrementDownvotes = function(comment) {
+		$scope.incrementDownvotes = function(comment) {
 			posts.downvoteComment(post, comment);
 		};
 }]);
