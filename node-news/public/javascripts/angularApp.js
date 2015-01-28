@@ -110,6 +110,10 @@ function($stateProvider, $urlRouterProvider) {
 		$scope.incrementDownvotes = function(post) {
 			posts.downvote(post);
 		};
+		
+		$scope.getCommentCount = function(post) {
+			return post.comments.length;
+		};
 }])
 
 .controller('PostsCtrl', [
